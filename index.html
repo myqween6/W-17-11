@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>حكاية وتين</title>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&family=Cairo:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#2a2150;--gold:#ffd36b;--rose:#ff8fab;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-snap-type:y proximity;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Cairo',sans-serif;line-height:1.9;overflow-x:hidden;background:#1a1647}
+h1,h2,.big,.n{font-family:'Aref Ruqaa',serif;font-weight:700}
+.sc{min-height:100vh;min-height:100svh;scroll-snap-align:start;position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 26px;overflow:hidden}
+.s1{background:linear-gradient(#0f0c33,#2e2478 70%,#5a3f94);color:#fff4e0}
+.s2{background:linear-gradient(#ffb36b,#ffd98a 55%,#fff0b8);color:var(--ink)}
+.s3{background:linear-gradient(#ffd6e0,#ffc2d4 60%,#ffb0c8);color:var(--ink)}
+.s4{background:linear-gradient(#b6ecd2,#8fdcc0);color:var(--ink)}
+.s5{background:linear-gradient(#fff4e8,#ffe6d6);color:var(--ink);justify-content:flex-start;padding-top:80px}
+h2{font-size:clamp(2rem,9vw,3rem);margin:0 0 6px;line-height:1.4}
+p{margin:0;font-size:1.1rem}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s,transform .9s;transition-delay:calc(var(--i,0)*.25s)}
+.in .rv{opacity:1;transform:none}
+.st{position:absolute;width:var(--s);height:var(--s);border-radius:50%;background:#fff6c8;box-shadow:0 0 8px #fff6c8;animation:tw var(--d) ease-in-out infinite}
+@keyframes tw{50%{opacity:.2;transform:scale(.6)}}
+.shoot{position:absolute;top:12%;right:10%;width:120px;height:3px;background:linear-gradient(270deg,#fff,transparent);border-radius:3px;transform:rotate(30deg);opacity:0;animation:sh 6s ease-in infinite 1s}
+@keyframes sh{0%{opacity:0;transform:translate(0,0) rotate(30deg)}8%{opacity:1}30%{opacity:0;transform:translate(-260px,150px) rotate(30deg)}100%{opacity:0}}
+.sun{position:absolute;bottom:-120px;left:50%;width:340px;height:340px;margin-left:-170px;border-radius:50%;background:radial-gradient(circle,#fff6b0 0,#ffd04d 45%,#ffb347 70%);box-shadow:0 0 120px 60px #fff1a088;animation:rise 3s ease-out both paused}
+.in .sun{animation-play-state:running}
+@keyframes rise{from{transform:translateY(160px)}}
+.s2 h2,.s2 p{position:relative;z-index:1}
+.baby{width:190px;margin-bottom:6px;animation:fl 5s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-8px)}}
+.big{all:unset;cursor:pointer;display:block;font-family:'Aref Ruqaa',serif;font-weight:700;font-size:clamp(5.5rem,30vw,9rem);line-height:1.25;color:#fff;text-shadow:0 4px 0 #e8668c,0 10px 30px #e8668c88}
+.big:focus-visible{outline:3px dashed var(--ink);outline-offset:6px;border-radius:20px}
+.big span{display:inline-block;transition:transform .5s,opacity .3s}
+.big.o span{transform:scale(.7) rotate(-6deg);opacity:0}
+.hint{font-size:.9rem;opacity:.75}
+.clock{display:flex;gap:12px;margin:18px 0 12px;width:100%;max-width:380px}
+.clock div{flex:1;background:#ffffffaa;border-radius:26px;padding:10px 0 4px}
+.n{display:block;font-size:2.7rem;line-height:1.3}
+.clock small{font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:14px 0 8px}
+.chip{all:unset;cursor:pointer;padding:6px 18px;border-radius:99px;background:#fff;border:2px solid #f0c9bd;transition:transform .2s}
+.chip:focus-visible{outline:3px dashed var(--ink);outline-offset:3px}
+.chip[aria-pressed=true]{background:var(--rose);color:#fff;border-color:var(--rose);transform:scale(1.06)}
+.form{display:flex;gap:8px;width:100%;max-width:400px;margin-top:10px}
+.form input{flex:1;min-width:0;border:2px solid #f0c9bd;background:#fff;color:var(--ink);border-radius:99px;padding:8px 18px;font:inherit}
+.form button{border:0;background:var(--ink);color:#fff;border-radius:99px;padding:8px 22px;font:inherit;font-weight:600;cursor:pointer}
+#msgs{list-style:none;padding:0;margin:12px 0 0;width:100%;max-width:400px;display:flex;flex-direction:column;gap:8px}
+#msgs li{background:#fff;border-radius:18px;padding:6px 16px;animation:pp .4s both}
+@keyframes pp{from{opacity:0;transform:scale(.9)}}
+.love{border:0;background:none;font-size:3rem;cursor:pointer;margin-top:18px;animation:bt 1.6s ease-in-out infinite}
+@keyframes bt{50%{transform:scale(1.15)}}
+.dots{position:fixed;left:10px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:5}
+.dots a{width:11px;height:11px;border-radius:50%;background:#ffffffaa;border:2px solid var(--ink)}
+.dots a.on{background:var(--rose);transform:scale(1.3)}
+.up{position:fixed;bottom:calc(14px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;font-size:.85rem;color:#fff;pointer-events:none;z-index:4;animation:hd 6s forwards}
+@keyframes hd{80%{opacity:1}to{opacity:0}}
+.h{position:fixed;bottom:12%;font-size:1.8rem;pointer-events:none;z-index:9;animation:ft 2.4s ease-out forwards}
+@keyframes ft{to{transform:translateY(-60vh);opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav class="dots" aria-label="التنقل"><a href="#a" aria-label="١"></a><a href="#b" aria-label="٢"></a><a href="#c" aria-label="٣"></a><a href="#d" aria-label="٤"></a><a href="#e" aria-label="٥"></a></nav>
+<p class="up">انزلي لتحت وكملي الحكاية ↓</p>
+
+<section class="sc s1" id="a">
+<div class="shoot"></div>
+<h2 class="rv">في سما مستنية نجمة جديدة...</h2>
+<p class="rv" style="--i:1">والكل كان بيعدّ الأيام ✨</p>
+</section>
+
+<section class="sc s2" id="b">
+<h2 class="rv">وفي يوم الثلاثاء ١٧ نوفمبر</h2>
+<p class="rv" style="--i:1">الساعة ١٢ الضهر، الشمس طلعت أحلى من أي يوم ☀️</p>
+<div class="sun"></div>
+</section>
+
+<section class="sc s3" id="c">
+<svg class="baby rv" viewBox="0 0 200 150" aria-label="وتين نايمة">
+<ellipse cx="100" cy="112" rx="88" ry="34" fill="#fff"/>
+<path d="M18 112Q100 52 182 112Q100 146 18 112z" fill="#cfeadb"/>
+<circle cx="100" cy="68" r="42" fill="#ffe7d6"/>
+<path d="M62 56Q100 14 138 56Q122 40 100 40Q78 40 62 56z" fill="#ff8fab"/>
+<path d="M80 72q7 6 14 0M106 72q7 6 14 0" stroke="#2a2150" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+<circle cx="74" cy="86" r="7" fill="#ff8fab" opacity=".5"/><circle cx="126" cy="86" r="7" fill="#ff8fab" opacity=".5"/>
+<path d="M93 88q7 6 14 0" stroke="#2a2150" stroke-width="3" fill="none" stroke-linecap="round"/>
+</svg>
+<p class="rv">وجات...</p>
+<button class="big rv" id="nm" style="--i:1" aria-label="اضغطي لتبديل الاسم والدلع"><span id="nmt">وتين</span></button>
+<p class="hint rv" id="sub" style="--i:2">اضغطي على الاسم لتعرفي دلعها</p>
+</section>
+
+<section class="sc s4" id="d">
+<h2 class="rv">بقالها في الدنيا</h2>
+<div class="clock rv" style="--i:1"><div><span class="n" id="h">٠</span><small>ساعة</small></div><div><span class="n" id="m">٠</span><small>دقيقة</small></div><div><span class="n" id="s">٠</span><small>ثانية</small></div></div>
+<p class="rv" style="--i:2"><b>وتين</b> يعني العِرق اللي بيوصل بالقلب ويوصّل له الحياة 💚</p>
+</section>
+
+<section class="sc s5" id="e">
+<h2 class="rv">دعواتكم لوتين</h2>
+<div class="chips rv" style="--i:1">
+<button class="chip" aria-pressed="false">🌙 نوم هادي</button><button class="chip" aria-pressed="false">💛 قلب أبيض</button><button class="chip" aria-pressed="false">⭐ ضحكة منوّرة</button><button class="chip" aria-pressed="false">🌸 عمر مليان فرحة</button><button class="chip" aria-pressed="false">🤲 ربنا يحفظها</button>
+</div>
+<div class="form rv" style="--i:2"><input id="in" maxlength="80" placeholder="ألف مبروك يا وتين..." aria-label="رسالتك"><button id="go">ابعتي</button></div>
+<ul id="msgs"></ul>
+<button class="love" id="love" aria-label="ابعتي حب">🤍</button>
+<p style="margin-top:20px;font-size:1.15rem;font-weight:bold;color:#2a2150;">الف مبروك ي حبيب قلبى وتتربى ف عزكم 🤍<br><span style="font-size:.95rem;font-weight:600;opacity:.8;">Design by Loma</span></p>
+<p class="hint">اتعملت بحب في يوم ميلادها</p>
+</section>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+var ar=function(n){return String(n).replace(/\d/g,function(d){return String.fromCharCode(1632+ +d)})};
+var s1=document.querySelector('.s1');
+for(var i=0;i<40;i++){var t=document.createElement('i');t.className='st';
+t.style.cssText='--s:'+(2+Math.random()*4)+'px;--d:'+(2+Math.random()*4)+'s;left:'+Math.random()*100+'%;top:'+Math.random()*100+'%;animation-delay:'+(-Math.random()*5)+'s';s1.appendChild(t)}
+var secs=document.querySelectorAll('.sc'),dots=document.querySelectorAll('.dots a');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){
+if(e.isIntersecting){e.target.classList.add('in');dots.forEach(function(d,k){d.classList.toggle('on',secs[k]===e.target)})}})},{threshold:.45});
+secs.forEach(function(s){io.observe(s)})}else secs.forEach(function(s){s.classList.add('in')});
+var born=new Date('2026-11-17T12:00:00+02:00').getTime();
+function tick(){var d=Math.max(0,Date.now()-born)/1000|0;
+$('h').textContent=ar(d/3600|0);$('m').textContent=ar(d%3600/60|0);$('s').textContent=ar(d%60)}
+tick();setInterval(tick,1000);
+var alt=false,nm=$('nm');
+nm.addEventListener('click',function(){alt=!alt;nm.classList.add('o');
+setTimeout(function(){$('nmt').textContent=alt?'ميار':'وتين';$('sub').textContent=alt?'ميار، دلع وتين في البيت 💗':'وتين، وهيدلعوها ميار';nm.classList.remove('o')},300)});
+function fly(l,n){for(var i=0;i<n;i++){var s=document.createElement('span');s.className='h';s.textContent=l[i%l.length];
+s.style.left=(10+Math.random()*80)+'%';s.style.animationDelay=(i*.12)+'s';document.body.appendChild(s);setTimeout(function(x){x.remove()}.bind(null,s),3200)}}
+$('love').addEventListener('click',function(){fly(['💗','🤍','💖','🌸'],8)});
+document.querySelectorAll('.chip').forEach(function(b){b.addEventListener('click',function(){
+var on=b.getAttribute('aria-pressed')!=='true';b.setAttribute('aria-pressed',on);if(on)fly(['✨'],3)})});
+function send(){var i=$('in'),v=i.value.trim();if(!v)return;var li=document.createElement('li');li.textContent='💌 '+v;$('msgs').prepend(li);i.value='';fly(['💌'],4)}
+$('go').addEventListener('click',send);
+$('in').addEventListener('keydown',function(e){if(e.key==='Enter')send()});
+})();
+</script>
+</body>
+</html>
